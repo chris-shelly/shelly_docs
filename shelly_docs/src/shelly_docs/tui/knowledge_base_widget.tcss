@@ -1,0 +1,44 @@
+KnowledgeBase {
+  layout: grid;
+  grid-size: 3;
+  grid-columns: 3fr 3fr 3fr; 
+}
+
+KnowledgeBaseMenu {
+  row-span: 3;
+}
+
+Item {
+  column-span: 2;
+  row-span: 2;
+}
+
+KnowledgeBaseConfig {
+  column-span: 2;
+  row-span: 1;
+}
+
+.box {
+  border: solid white;
+  height: 100%;
+
+}
+
+KnowledgeBaseMenu {
+  layout: grid;
+  grid-size: 1 2;
+  grid-rows: 2fr 6fr;
+}
+
+#kb-menu-options {
+  border: solid white;
+}
+
+#kb-menu-options .kb-menu-option {
+  content-align: center middle;
+}
+
+.kb-menu-option {
+  width: 1fr;
+  height: 100%;
+}
