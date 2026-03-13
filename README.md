@@ -12,15 +12,15 @@ pip install --user shelly-docs
 ### Setup Knowledge Base
 A Knowledge Base is just a directory that will hold the Markdown documents with your Items, and the `shellydocs.yaml` file.
 
-Pick a Directory to hold your Knowledge Base.
+Pick or create a directory to hold your knowledge base.
 
-Create a `shellydocs.yaml` file, specifying what `item_tags` you want
+Create a `shellydocs.yaml` file, specifying what `item_tags` you want. These will
 ```yaml
 item_tags:
 - DESIGN
 ```
 
-#### Add Items in a Markdown Document
+Add a Markdown Document
 ```md
 # DESIGN-1 Access Data
 Access data from the system.
@@ -30,9 +30,9 @@ Write data to the system
 ```
 
 
-#### Initialize the Knowledge Base
+#### Initializing the Knowledge Base
 ```bash
-shelly-docs kb set --path "mgmt_docs" # set the knowledge base path
+shelly-docs kb set --path "<absolute path to the knowledge base directory>" # set the knowledge base path
 
 shelly-docs kb update # reads/refreshes the items in the knowledge base
 ```
@@ -44,17 +44,22 @@ shelly-docs items list
 #### Query Items
 If an Item has a codefenced block with an info string of `"yaml (data)"`, the data can then be queried with YAML.
 
+````md
+# DESIGN-3 Review Data
 ```yaml (data)
-# place this code block on an Item.
 status: todo 
 ```
+Review the data to confirm it's correct.
+````
 
 ```bash
-# get the items that have a 'status' of 'done'
+# get the items that have a 'status' of 'todo'
 shelly-docs items query --query "status: todo"
 ```
 #### Updating Items
-Recommended to directly edit the files, and then run `kb update`. Items will then be recaptured based on the content of the markdown files in the Knowledge base.
+Make direct file edits, and then run `kb update`.
+
+Items will then be recaptured based on the content of the markdown files in the Knowledge base.
 
 Optionally, you can run `items put` and provide an item with the path and markdown.
 
